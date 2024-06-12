@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banners</title>
+    <!-- css link  -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- font awesome  -->
+
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml" />
+
+    <!-- 
+   - custom css link
+ -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- font awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Include SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- Include SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- 
+   - google font link
+ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
+
+</head>
+
+<body>
+    <aside class="sidebar " id="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="img/logo.png" alt="" />
+                </span>
+
+                <div class="text header-text">
+
+                </div>
+            </div>
+
+            <i class="fa-solid fa-angle-right toggle" id="close-toggle" onclick="closeBtn() "></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="navlink">
+                        <input type="search" name="" id="" placeholder=" search" />
+                        <a href="#" title="search">
+                            <i class="fa-solid fa-magnifying-glass search"></i>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="index.html">
+                            <i class="fa-solid fa-house icon"></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="user.html">
+                            <i class="fa-solid fa-square-parking icon"></i>
+                            <span class="text nav-text">users</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="vic.html">
+                            <i class="fa-solid fa-car icon"></i>
+                            <span class="text nav-text">vehicles</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="parks.html">
+                            <i class="fa-solid fa-square-parking icon"></i>
+                            <span class="text nav-text">parks</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="services.html">
+                            <i class="fa-solid fa-gears icon"></i>
+                            <span class="text nav-text">Services</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="banners.html" class="active">
+                            <i class="fa-regular fa-images icon"></i>
+                            <span class="text nav-text">Banners</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="event.html">
+                            <i class="fa-solid fa-calendar-minus icon"></i>
+                            <span class="text nav-text">Event</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="payment.html">
+                            <i class="fa-solid fa-sack-xmark icon"></i>
+                            <span class="text nav-text">Payment</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="orders.html">
+                            <i class="fa-regular fa-folder-open icon"></i>
+                            <span class="text nav-text">Orders</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="acount.html">
+                            <i class="fa-solid fa-user-pen icon"></i>
+                            <span class="text nav-text">Acount</span>
+                        </a>
+                    </li>
+                    <li class="navlink">
+                        <a href="#">
+                            <i class="fa-solid fa-right-from-bracket icon"></i>
+                            <span class="text nav-text" onclick="deleteTokenAndConfirm()">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+
+    <section class="main">
+        <section class="head">
+            <ul>
+                <li><i class="fa-solid fa-bell icon"></i></li>
+                <li><img src="img/prof1.png" alt="" /></li>
+            </ul>
+        </section>
+        <br />
+
+        <section class="main-cards">
+            <div class="container">
+                <h1>Banners</h1>
+
+
+                <section class="banData grid"></section>
+
+                <h2 class="title">Add Banner</h2>
+                <form id="bannerForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required><br><br>
+
+                    <label for="image">Image:</label>
+                    <input type="file" id="image" name="image" accept="image/*" required><br><br>
+
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea><br><br>
+
+                    <label for="link">Link:</label>
+                    <input type="url" id="link" name="link" required><br><br>
+
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+
+            </div>
+        </section>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="js/main.js"></script>
+    <script>
+
+        document.getElementById('bannerForm').addEventListener('submit', async function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get form data
+            const formData = new FormData();
+            formData.append('name', document.getElementById('name').value);
+            formData.append('image', document.getElementById('image').files[0]);
+            formData.append('description', document.getElementById('description').value);
+            formData.append('link', document.getElementById('link').value);
+
+
+
+            // Confirm the action with SweetAlert2
+            const result = await Swal.fire({
+                title: 'Are you sure?',
+                text: "Do you want to submit this banner?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, submit it!'
+            });
+
+            if (result.isConfirmed) {
+                try {
+                    // Make the POST request
+                    const response = await fetch('${api}/api/v1/banner', {
+                        method: 'POST',
+                        headers: {
+                            token: token
+                        },
+                        body: formData
+                    });
+
+                    // Check for HTTP errors
+                    if (!response.ok) {
+                        // If response is not ok, throw an error with status text
+                        throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                    }
+
+                    const responseData = await response.json();
+
+                    // Show success message
+                    Swal.fire(
+                        'Submitted!',
+                        'Your banner has been submitted.',
+                        'success'
+                    );
+                } catch (error) {
+                    // Log the error to the console for debugging
+                    console.error('Error during form submission:', error);
+
+                    // Show error message
+                    Swal.fire(
+                        'Error!',
+                        `There was a problem submitting your banner. ${error.message}`,
+                        'error'
+                    );
+                }
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+        document.addEventListener('DOMContentLoaded', async function () {
+            const token = localStorage.getItem('token');
+
+            try {
+                const response = await fetch(`${api}/api/v1/banner`, {
+                    method: 'GET',
+                    headers: {
+                        token: token
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                }
+
+                const responseData = await response.json();
+
+                if (responseData.success) {
+                    const banners = responseData.data;
+                    const banDataSection = document.querySelector('.banData');
+
+                    banDataSection.innerHTML = '';
+
+                    banners.forEach(banner => {
+                        const bannerElement = document.createElement('div');
+                        bannerElement.classList.add('banner');
+
+                        bannerElement.innerHTML = `
+                            <img src="${banner.image.secure_url}" alt="${banner.name}">
+                            <h2>${banner.name}</h2>
+                            <p>${banner.description}</p>
+                            <a href="${banner.link}" target="_blank">More Info</a>
+                            <div class="btns">
+                                <button onclick="deleteBanner('${banner._id}')">Delete</button>
+                                <button onclick="updBanner('${banner._id}')">Update</button>
+                            </div>
+                        `;
+
+                        banDataSection.appendChild(bannerElement);
+                    });
+                } else {
+                    Swal.fire('Error!', 'Failed to fetch banners.', 'error');
+                }
+            } catch (error) {
+                console.error('Error fetching banners:', error);
+                Swal.fire('Error!', `There was a problem fetching the banners. ${error.message}`, 'error');
+            }
+        });
+
+        async function deleteBanner(id) {
+            const token = localStorage.getItem('token');
+
+            const result = await Swal.fire({
+                title: 'Are you sure?',
+                text: "Do you want to delete this banner?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            });
+
+            if (result.isConfirmed) {
+                try {
+                    const response = await fetch(`${api}/api/v1/banner/${id}`, {
+                        method: 'DELETE',
+                        headers: {
+                            token: token
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                    }
+
+                    Swal.fire('Deleted!', 'Your banner has been deleted.', 'success');
+                    location.reload();
+                } catch (error) {
+                    console.error('Error deleting banner:', error);
+                    Swal.fire('Error!', `There was a problem deleting the banner. ${error.message}`, 'error');
+                }
+            }
+        }
+
+        async function updBanner(id) {
+            const token = localStorage.getItem('token');
+
+            try {
+                const response = await fetch(`${api}/api/v1/banner/${id}`, {
+                    method: 'GET',
+                    headers: {
+                        token: token
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                }
+
+                const banner = await response.json();
+
+                document.getElementById('name').value = banner.data.name;
+                document.getElementById('description').value = banner.data.description;
+                document.getElementById('link').value = banner.data.link;
+
+                document.getElementById('bannerForm').style.display = 'block';
+
+                document.getElementById('bannerForm').onsubmit = async function (event) {
+                    event.preventDefault();
+
+                    const formData = new FormData();
+                    formData.append('name', document.getElementById('name').value);
+                    formData.append('description', document.getElementById('description').value);
+                    formData.append('link', document.getElementById('link').value);
+
+                    const imageInput = document.getElementById('image');
+                    if (imageInput.files.length > 0) {
+                        formData.append('image', imageInput.files[0]);
+                    }
+
+                    const result = await Swal.fire({
+                        title: 'Are you sure?',
+                        text: "Do you want to update this banner?",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Yes, update it!'
+                    });
+
+                    if (result.isConfirmed) {
+                        try {
+                            const response = await fetch(`${api}/api/v1/banner/${id}`, {
+                                method: 'PUT',
+                                headers: {
+                                    'Authorization': `Bearer ${token}`
+                                },
+                                body: formData
+                            });
+
+                            if (!response.ok) {
+                                throw new Error(`HTTP error! Status: ${response.status} - ${response.statusText}`);
+                            }
+
+                            Swal.fire('Updated!', 'Your banner has been updated.', 'success');
+                            location.reload();
+                        } catch (error) {
+                            console.error('Error updating banner:', error);
+                            Swal.fire('Error!', `There was a problem updating the banner. ${error.message}`, 'error');
+                        }
+                    }
+                };
+            } catch (error) {
+                console.error('Error fetching banner:', error);
+                Swal.fire('Error!', `There was a problem fetching the banner. ${error.message}`, 'error');
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

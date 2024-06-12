@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services</title>
+  <!-- css link  -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- font awesome  -->
+
+  <link rel="shortcut icon" href="./assets/images/logo.png" type="image/svg+xml" />
+
+  <!-- 
+  - custom css link
+-->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+
+  <!-- font awesome  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- Include SweetAlert2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+  <!-- Include SweetAlert2 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- 
+  - google font link
+-->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+    .serv {
+      padding-block: var(--section-padding);
+    }
+
+    option {
+      background: var(--second-color);
+      color: white;
+      font-size: 18px;
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <aside class="sidebar " id="sidebar">
+    <header>
+      <div class="image-text">
+        <span class="image">
+          <img src="img/logo.png" alt="" />
+        </span>
+
+        <div class="text header-text">
+
+        </div>
+      </div>
+
+      <i class="fa-solid fa-angle-right toggle" id="close-toggle" onclick="closeBtn() "></i>
+    </header>
+
+    <div class="menu-bar">
+      <div class="menu">
+        <ul class="menu-links">
+          <li class="navlink">
+            <input type="search" name="" id="" placeholder=" search" />
+            <a href="#" title="search">
+              <i class="fa-solid fa-magnifying-glass search"></i>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="index.html">
+              <i class="fa-solid fa-house icon"></i>
+              <span class="text nav-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="user.html">
+              <i class="fa-solid fa-users-line icon"></i>
+              <span class="text nav-text">users</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="vic.html">
+              <i class="fa-solid fa-car icon"></i>
+              <span class="text nav-text">vehicles</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="parks.html">
+              <i class="fa-solid fa-square-parking icon"></i>
+              <span class="text nav-text">parks</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="services.html"class="active">
+              <i class="fa-solid fa-gears icon"></i>
+              <span class="text nav-text">Services</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="banners.html">
+              <i class="fa-regular fa-images icon"></i>
+              <span class="text nav-text">Banners</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="event.html">
+             <i class="fa-solid fa-calendar-minus icon"></i>
+              <span class="text nav-text">Event</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="payment.html">
+              <i class="fa-solid fa-sack-xmark icon"></i>
+              <span class="text nav-text">Payment</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="orders.html">
+              <i class="fa-regular fa-folder-open icon"></i>
+              <span class="text nav-text">Orders</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="acount.html">
+              <i class="fa-solid fa-user-pen icon"></i>
+              <span class="text nav-text">Acount</span>
+            </a>
+          </li>
+          <li class="navlink">
+            <a href="#">
+              <i class="fa-solid fa-right-from-bracket icon"></i>
+              <span class="text nav-text" onclick="deleteTokenAndConfirm()">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </aside>
+
+  <section class="head">
+    <ul>
+      <li><i class="fa-solid fa-bell icon"></i></li>
+      <li><img src="img/prof1.png" alt="" /></li>
+    </ul>
+  </section>
+  <section class="main">
+
+    <secrion class="allServs">
+      <div class="container">
+        <h1>All services</h1>
+        <div class="grid-boxes"></div>
+      </div>
+    </secrion>
+
+    <div id="editForm" style="display: none;">
+      <div class="container">
+
+        <h2> Edit Service</h2>
+        <form id="serviceEdit">
+          <label for="service_typeEdit">Service Type</label><br>
+          <select name="services" id="service_typeEdit">
+            <option value="Car electrician">Car electrician</option>
+            <option value="Furniture maintenance">Furniture maintenance</option>
+            <option value="Doku works">Doku works</option>
+            <option value="My saddlery works">My saddlery works</option>
+            <option value="Air conditioning maintenance">Air conditioning maintenance</option>
+            <option value="Mechanical maintenance">Mechanical maintenance</option>
+            <option value="Rubber maintenance">Rubber maintenance</option>
+            <option value="Plumbing works">Plumbing works</option>
+            <option value="oil change">oil change</option>
+            <option value="Spur">Spur</option>
+          </select>
+
+          <label for="creditPointEdit">credit Point:</label><br>
+          <input type="number" id="creditPointEdit" name="creditPointEdit"><br> <!-- تغيير هنا -->
+          <label for="discountEdit">discount:</label><br>
+          <input type="number" id="discountEdit" name="discount"><br>
+          <div class="btns">
+
+            <input type="submit" value="Update">
+            <input type="button" value="cancel" id="closeEdit">
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+
+    <section class="serv">
+
+      <div class="container">
+        <form id="serviceForm">
+          <h2 class="title">Add service</h2>
+          <label for="service_type">Service Type</label>
+          <select name="services" id="service_type">
+            <option value="Car electrician">Car electrician</option>
+            <option value="Furniture maintenance">Furniture maintenance</option>
+            <option value="Doku works">Doku works</option>
+            <option value="My saddlery works">My saddlery works</option>
+            <option value="Air conditioning maintenance">Air conditioning maintenance</option>
+            <option value="Mechanical maintenance">Mechanical maintenance</option>
+            <option value="Rubber maintenance">Rubber maintenance</option>
+            <option value="Plumbing works">Plumbing works</option>
+            <option value="oil change">oil change</option>
+            <option value="Spur">Spur</option>
+          </select>
+
+          <label for="creditPoint">Credit Points </label>
+          <input type="number" id="creditPoint" name="creditPoint">
+
+          <label for="discount">Discount </label>
+          <input type="number" id="discount" name="discount">
+
+          <input type="submit" value="Add Service">
+        </form>
+      </div>
+    </section>
+  </section>
+  </article>
+  </main>
+
+
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="js/main.js"></script>
+
+  <script>
+
+    // const token = JSON.parse(localStorage.getItem("token"));
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+      function service() {
+        document
+          .getElementById("serviceForm")
+          .addEventListener("submit", function (event) {
+            event.preventDefault(); // لمنع إعادة تحميل الصفحة
+
+            var service_type = document.getElementById("service_type").value;
+            var creditPoint = document.getElementById("creditPoint").value;
+            var discount = document.getElementById("discount").value;
+
+            var data = {
+              service_type: service_type,
+              creditPoint: creditPoint,
+              discount: discount,
+            };
+
+            fetch(`${api}/api/v1/service`, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                token: token,
+              },
+              body: JSON.stringify(data),
+            })
+              .then((response) => {
+                if (!response.ok) {
+                  throw new Error("Network response was not ok");
+                }
+                return response.json();
+              })
+              .then((data) => {
+                console.log(data);
+                swal("Success!", data.message, "success");
+              })
+              .catch((error) => {
+                console.error("Error:", error);
+                swal("Error", "Maybe already exist", "error");
+              });
+          });
+      }
+
+      // استدعاء دالة الخدمة بعد تحميل الصفحة بالكامل
+      service();
+    });
+
+
+    allServ();
+
+
+
+  </script>
+
+</body>
+
+</html>
